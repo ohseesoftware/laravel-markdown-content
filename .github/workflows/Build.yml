@@ -1,5 +1,5 @@
 name: Build
-on: [push, pull_request]
+on: [workflow_dispatch, push, pull_request]
 jobs:
     test:
         name: Test
@@ -30,4 +30,4 @@ jobs:
             - name: Release
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              run: npx semantic-release@15
+              run: npx semantic-release@16

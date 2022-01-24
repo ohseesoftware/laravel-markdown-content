@@ -1,22 +1,47 @@
-# Laravel Package Boilerplate
+# Laravel Markdown Content
 
-[![Current Release](https://img.shields.io/github/release/ohseesoftware/laravel-package-boilerplate.svg?style=flat-square)](https://github.com/ohseesoftware/laravel-package-boilerplate/releases)
-![Build Status Badge](https://github.com/ohseesoftware/laravel-package-boilerplate/workflows/Build/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/ohseesoftware/laravel-package-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/ohseesoftware/laravel-package-boilerplate?branch=master)
-[![Maintainability Score](https://img.shields.io/codeclimate/maintainability/ohseesoftware/laravel-package-boilerplate.svg?style=flat-square)](https://codeclimate.com/github/ohseesoftware/laravel-package-boilerplate)
-[![Downloads](https://img.shields.io/packagist/dt/ohseesoftware/laravel-package-boilerplate.svg?style=flat-square)](https://packagist.org/packages/ohseesoftware/laravel-package-boilerplate)
-[![MIT License](https://img.shields.io/github/license/ohseesoftware/laravel-package-boilerplate.svg?style=flat-square)](https://github.com/ohseesoftware/laravel-package-boilerplate/blob/master/LICENSE)
+[![Current Release](https://img.shields.io/github/release/ohseesoftware/laravel-markdown-content.svg?style=flat-square)](https://github.com/ohseesoftware/laravel-markdown-content/releases)
+![Build Status Badge](https://github.com/ohseesoftware/laravel-markdown-content/workflows/Build/badge.svg)
+[![Downloads](https://img.shields.io/packagist/dt/ohseesoftware/laravel-markdown-content.svg?style=flat-square)](https://packagist.org/packages/ohseesoftware/laravel-markdown-content)
+[![MIT License](https://img.shields.io/github/license/ohseesoftware/laravel-markdown-content.svg?style=flat-square)](https://github.com/ohseesoftware/laravel-markdown-content/blob/master/LICENSE)
 
-## TODO:
+## Overview
 
--   Search and replace "laravel-package-boilerplate" with the name of the new package
--   Search and replace "OhSeeSoftware\LaravelPackageBoilerplate" with the namespace of the new package
--   Change the names of the example classes (ExampleServiceProvider, ExampleFacade, etc)
+Laravel Markdown Content is an opinionated package that aims to make adding markdown generated pages to your site a breeze. It follows the same idea as, and was heavily inspired by [Laravel Pages](https://github.com/archtechx/laravel-pages).
 
-### Coverage reporting
+Out of the box, Laravel Markdown Content supports the following use cases:
 
--   If you want to report on code coverage, setup the repo at [https://coveralls.io](https://coveralls.io)
--   Update the Coveralls image URL in this README file
+- Rendering a single article
+- Rendering a list of articles
+- Rendering a single category
+
+Articles can be any type of content and are not limited to "posts". 
+
+### Content
+
+- Markdown content is parsed and rendered into HTML via Commonmark, allowing you to pass in extra plugins
+- The package will then render a Blade view of your choosing, passing in the HTML version of the markdown content
+
+## Installation
+
+Install the package via composer:
+
+```
+composer require ohseesoftware/laravel-markdown-content
+```
+
+Publish the configuration file:
+
+```
+php artisan vendor:publish --tag=markdown-content-config
+```
+
+The configuration file allows you to define:
+
+- Custom Commonmark extensions for rendering your content
+- Route definitions for the supplied route logic
+
+**Note:** the package does not provide a default view to render your content, so you must supply your own view and add it to the configuration file.
 
 ### Maintainability score
 
@@ -50,4 +75,4 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 ## Laravel Package Boilerplate
 
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
+This package was generated using the [Laravel Package Boilerplate](https://https://laravelpackageboilerplate.com/.com).

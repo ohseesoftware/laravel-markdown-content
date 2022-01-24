@@ -1,10 +1,12 @@
 <?php
 
-namespace OhSeeSoftware\LaravelPackageBoilerplate\Tests;
+namespace OhSeeSoftware\LaravelMarkdownContent\Tests;
 
-use OhSeeSoftware\LaravelPackageBoilerplate\ExampleServiceProvider;
+use Illuminate\Routing\Middleware\SubstituteBindings;
+use Illuminate\Routing\Router;
+use OhSeeSoftware\LaravelMarkdownContent\LaravelMarkdownContentServiceProvider;
 
-class TestServiceProvider extends ExampleServiceProvider
+class TestServiceProvider extends LaravelMarkdownContentServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -14,5 +16,6 @@ class TestServiceProvider extends ExampleServiceProvider
         parent::boot();
 
         $this->loadRoutesFrom(__DIR__ . '/routes/test-routes.php');
+        $this->loadViewsFrom(__DIR__ . '/views', 'markdown-content');
     }
 }

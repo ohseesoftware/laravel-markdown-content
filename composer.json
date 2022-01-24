@@ -1,11 +1,11 @@
 {
-    "name": "ohseesoftware/laravel-package-boilerplate",
-    "description": "Describe your package here.",
+    "name": "ohseesoftware/laravel-markdown-content",
+    "description": "Laravel Markdown Content is an opinionated package that aims to make adding markdown generated pages to your site a breeze.",
     "keywords": [
         "ohseesoftware",
         "laravel"
     ],
-    "homepage": "https://github.com/ohseesoftware/laravel-package-boilerplate",
+    "homepage": "https://github.com/ohseesoftware/laravel-markdown-content",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -15,7 +15,9 @@
         }
     ],
     "require": {
-        "php": "^8.0"
+        "php": "^8.0",
+        "laravel/framework": "^8.80",
+        "ryangjchandler/orbit": "^0.9"
     },
     "require-dev": {
         "orchestra/testbench": "^6.7",
@@ -25,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "OhSeeSoftware\\LaravelServerAnalytics\\": "src"
+            "OhSeeSoftware\\LaravelMarkdownContent\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "OhSeeSoftware\\LaravelServerAnalytics\\Tests\\": "tests"
+            "OhSeeSoftware\\LaravelMarkdownContent\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -43,11 +45,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "OhSeeSoftware\\LaravelServerAnalytics\\LaravelServerAnalyticsServiceProvider"
-            ],
-            "aliases": {
-                "LaravelServerAnalytics": "OhSeeSoftware\\LaravelServerAnalytics\\ServerAnalytics"
-            }
+                "OhSeeSoftware\\LaravelMarkdownContent\\LaravelMarkdownContentServiceProvider"
+            ]
         }
     }
 }

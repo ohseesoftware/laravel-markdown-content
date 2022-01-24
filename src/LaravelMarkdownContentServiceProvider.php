@@ -1,10 +1,10 @@
 <?php
 
-namespace OhSeeSoftware\LaravelPackageBoilerplate;
+namespace OhSeeSoftware\LaravelMarkdownContent;
 
 use Illuminate\Support\ServiceProvider;
 
-class ExampleServiceProvider extends ServiceProvider
+class LaravelMarkdownContentServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -21,22 +21,22 @@ class ExampleServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/config.php' => config_path('laravel-package-boilerplate.php'),
+                __DIR__ . '/../config/config.php' => config_path('laravel-markdown-content.php'),
             ], 'config');
 
             // Publishing the views.
             /*$this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/laravel-package-boilerplate'),
+                __DIR__.'/../resources/views' => resource_path('views/vendor/laravel-markdown-content'),
             ], 'views');*/
 
             // Publishing assets.
             /*$this->publishes([
-                __DIR__.'/../resources/assets' => public_path('vendor/laravel-package-boilerplate'),
+                __DIR__.'/../resources/assets' => public_path('vendor/laravel-markdown-content'),
             ], 'assets');*/
 
             // Publishing the translation files.
             /*$this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/laravel-package-boilerplate'),
+                __DIR__.'/../resources/lang' => resource_path('lang/vendor/laravel-markdown-content'),
             ], 'lang');*/
 
             // Registering package commands.
@@ -50,11 +50,15 @@ class ExampleServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'laravel-package-boilerplate');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'markdown-content');
+
+        $this->publishes([
+            __DIR__ . '/../config/config.php' => config_path('markdown-content.php'),
+        ], 'markdown-content-config');
 
         // Register the main class to use with the facade
-        $this->app->singleton('laravel-package-boilerplate', function () {
-            return new LaravelPackageBoilerplate;
+        $this->app->singleton('laravel-markdown-content', function () {
+            return new LaravelMarkdownContent;
         });
     }
 }

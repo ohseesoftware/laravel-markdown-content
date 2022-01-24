@@ -14,8 +14,8 @@ class MarkdownService
         $environment->addExtension(new CommonMarkCoreExtension());
 
         $extensions = config('markdown-content.commonmark.extensions', []);
-        foreach ($extensions as $extension) {
-            $environment->addExtension($extension);
+        foreach ($extensions as $extensionClass) {
+            $environment->addExtension(new $extensionClass);
         }
 
         $commonMarkConverter = new MarkdownConverter($environment);

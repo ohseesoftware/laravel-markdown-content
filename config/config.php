@@ -3,7 +3,6 @@
 use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
 use League\CommonMark\Extension\TableOfContents\TableOfContentsExtension;
 use OhSeeSoftware\LaravelMarkdownContent\Http\Controllers\IndexArticlesController;
-use OhSeeSoftware\LaravelMarkdownContent\Http\Controllers\IndexCategoriesController;
 use OhSeeSoftware\LaravelMarkdownContent\Http\Controllers\ShowArticleController;
 use OhSeeSoftware\LaravelMarkdownContent\Http\Controllers\ShowArticleOgImageController;
 use OhSeeSoftware\LaravelMarkdownContent\Http\Controllers\ShowCategoryController;
@@ -48,8 +47,8 @@ return [
 
     'commonmark' => [
         'extensions' => [
-            new HeadingPermalinkExtension(),
-            new TableOfContentsExtension()
+            HeadingPermalinkExtension::class,
+            TableOfContentsExtension::class
         ],
         'environment' => [
             'heading_permalink' => [

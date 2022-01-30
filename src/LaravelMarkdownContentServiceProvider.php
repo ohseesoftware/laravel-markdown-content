@@ -3,6 +3,7 @@
 namespace OhSeeSoftware\LaravelMarkdownContent;
 
 use Illuminate\Support\ServiceProvider;
+use OhSeeSoftware\LaravelMarkdownContent\Console\Commands\MakeArticleCommand;
 
 class LaravelMarkdownContentServiceProvider extends ServiceProvider
 {
@@ -40,7 +41,9 @@ class LaravelMarkdownContentServiceProvider extends ServiceProvider
             ], 'lang');*/
 
             // Registering package commands.
-            // $this->commands([]);
+            $this->commands([
+                MakeArticleCommand::class
+            ]);
         }
     }
 

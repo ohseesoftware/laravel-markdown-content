@@ -7,7 +7,7 @@
 
 ## Overview
 
-Laravel Markdown Content is an opinionated package that aims to make adding markdown generated pages to your site a breeze. It follows the same idea as, and was heavily inspired by [Laravel Pages](https://github.com/archtechx/laravel-pages).
+Laravel Markdown Content is an opinionated package that aims to make adding markdown generated pages to your site a breeze. It follows the same idea and was heavily inspired by [Laravel Pages](https://github.com/archtechx/laravel-pages).
 
 Out of the box, Laravel Markdown Content supports the following use cases:
 
